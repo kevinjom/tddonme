@@ -23,6 +23,13 @@ class Money
   end
 
   def eql?(other)
-    @amount == other.amount
+    @amount == other.amount && @currency==other.currency
+  end
+end
+
+# bank class
+class Bank
+  def reduce(expression, currency)
+    Money.dollar(10)
   end
 end
