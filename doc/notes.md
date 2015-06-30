@@ -6,7 +6,9 @@
 4. Run your test suite. Repeat steps 3 and 4 until all tests pass.
 5. Go back and refactor your new code, making it as simple and clear as possible while keeping the test suite green.
 
-## you need think before you write any tests
+### you need think before you write any tests
 
-## you don’t need do much design at first 
+### you don’t need do much design at first 
+
+### you should know when to move forward and when to go backward
 

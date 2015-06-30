@@ -41,11 +41,33 @@ describe Money do
     end
   end
 
-  describe '#add' do
+  describe 'simple addition' do
     context '$5 plus $5' do
       it 'should be $10' do
         sum = Money.dollar(5).plus(Money.dollar(5))
         bank=Bank.new
+        reduced = bank.reduce(sum, 'USD')
+        expect(reduced).to eql(Money.dollar(10))
+      end
+    end
+  end
+
+
+  describe 'add with different currency' do
+    context 'F2 reduced to dollar' do
+      it 'shoule be $1' do
+        bank=Bank.new
+        bank.add_rate('CHF', 'USD', 2)
+
+        expect(bank.reduce(Money.franc(2), 'USD')).to eql(Money.dollar(1))
+      end
+    end
+
+    context '$5 plus F10' do
+      it 'should be $10' do
+        bank=Bank.new
+        bank.add_rate('CHF', 'USD', 2)
+        sum = Money.dollar(5).plus(Money.franc(10))
         reduced = bank.reduce(sum, "USD")
         expect(reduced).to eql(Money.dollar(10))
       end
