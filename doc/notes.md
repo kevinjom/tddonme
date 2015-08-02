@@ -22,6 +22,7 @@
    make a list which contains what you want to test
 2. you don’t need do much design at first, you can implement what you want, 
    then refactor and test util you make the code clean
+3. what you should begin your follow up test can be dicided by what is the most important thing the system hasn't do.
 
 ## Something confuse me
 
